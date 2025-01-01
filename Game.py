@@ -1,3 +1,4 @@
+
 # importo la libreria "random" per gestire un output casuale
 import random
 
@@ -20,21 +21,27 @@ def game():
     # concateno più stringhe da stampare con il segno +
     # oppure aggiungo una f prima delle virgolette e le variabili tra parentesi graffe chiudendo le virgolette alla fine
     # così facendo posso evitare di utilizzare il segno + molteplici volte
-    print(f"Tu hai scelto  { player } , il computer ha scelto  {computer}")
+    print(f"Tu hai scelto  {player}, il computer ha scelto {computer}")
     if player == computer:
       return "Pareggio!"
-    elif player == "Roccia" and computer == "Forbici":
-      return "La Roccia rompe le Forbici! Hai Vinto!"
-    elif player == "Roccia" and computer == "Carta":
-      return "La Carta copre la Roccia! Hai Perso!"
-    elif player == "Carta" and computer == "Roccia":
-      return "La Carta copre la Roccia! Hai Vinto!"
-    elif player == "Carta" and computer == "Forbici":
-      return "Le Forbici tagliano la Carta! Hai Perso!"
-    elif player == "Forbici" and computer == "Carta":
-      return "Le Forbici tagliano la Carta! Hai Vinto!"
-    elif player == "Forbici" and computer == "Roccia":
-      return "La Roccia rompe le Forbici! Hai Perso!"
+    # anzichè utilizzare una serie di "elif" verificando le scelte del giocatore e del computer tramite "and"
+    # è possibile verificare la scelta del giocatore ed utilizzare degli "if" annidati ed "else"
+    # se l'"if" iniziale restituirà "pareggio", il codice successivo non verrà eseguito
+    elif player == "Roccia":
+      if computer == "Forbici":
+        return "La Roccia rompe le Forbici! Hai Vinto!"
+      else:
+        return "La Carta copre la Roccia! Hai Perso!"
+    elif player == "Carta":
+      if computer == "Roccia":
+        return "La Carta copre la Roccia! Hai Vinto!"
+      else:
+        return "Le Forbici tagliano la Carta! Hai Perso!"
+    elif player == "Forbici":
+      if computer == "Carta":
+        return "Le Forbici tagliano la Carta! Hai Vinto!"
+      else:
+        return "La Roccia rompe le Forbici! Hai Perso!"
   
   # chiamo la funzione get_choices per generare l'output choices da stampare successivamente
   choices = get_choices()
