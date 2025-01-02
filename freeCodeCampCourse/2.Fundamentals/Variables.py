@@ -1,4 +1,4 @@
-# python è un linguaggio dinamico, capirà la variabile automaticamente. Ecco alcuni esempi:
+# python è un linguaggio dinamico, capirà la tipologia (classe) della variabile automaticamente. Ecco alcuni esempi:
 name = "Marco" # questa è una stringa
 print(type(name)) # questo comando mostrerà la tipologia della variabile (o classe)
 print(type(name) == str) # questo comando mostrerà se è vero o falso che la variabile sia effettivamente una stringa
